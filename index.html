@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+  <meta http-equiv="Pragma" content="no-cache" />
+  <meta http-equiv="Expires" content="0" />
+  <title>Regularización Inventario Huawei</title>
+  <link rel="stylesheet" href="styles.css?v=2" />
+</head>
+<body>
+  <main class="app-shell">
+    <section class="toolbar-card">
+      <div class="title-box">
+        <h1>Regularización de Inventario</h1>
+        <p>FLM HUAWEI</p>
+      </div>
+
+      <div class="filters-row">
+        <div class="field search-field">
+          <label for="searchInput">Buscar</label>
+          <input id="searchInput" type="text" placeholder="Buscar por part number, descripción, serie o almacén..." />
+        </div>
+
+        <div class="field warehouse-field">
+          <label for="warehouseFilter">Almacén</label>
+          <select id="warehouseFilter">
+            <option value="">Todos</option>
+          </select>
+        </div>
+
+        <div class="button-group">
+          <button id="btnLimpiar" class="btn btn-secondary" type="button">Limpiar</button>
+          <button id="btnGuardar" class="btn btn-primary" type="button">Guardar</button>
+          <button id="btnDescargar" class="btn btn-excel" type="button">Descargar Excel</button>
+        </div>
+      </div>
+
+      <div class="status-line">
+        <span id="recordCount">0 registros</span>
+        <span id="pendingCount" class="pending hidden">0 cambios pendientes</span>
+      </div>
+    </section>
+
+    <section class="table-card">
+      <div class="table-wrapper">
+        <table id="inventoryTable" class="inventory-table">
+          <thead>
+            <tr>
+              <th class="locked">PROPIETARIO</th>
+              <th class="locked">PART NUMBER</th>
+              <th class="locked">DESCRIPCION</th>
+              <th class="locked">SERIE</th>
+              <th class="locked">ALMACÉN</th>
+              <th class="editable">NUEVO ESTADO</th>
+              <th class="editable">DETALLE DEL CONSUMO</th>
+              <th class="editable">TIENES EL AVERIADO?</th>
+              <th class="editable">REGULARIZADO?</th>
+            </tr>
+          </thead>
+          <tbody id="tableBody">
+            <tr>
+              <td colspan="9" class="empty-cell">Cargando inventario...</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <div id="loaderOverlay" class="loader-overlay hidden">
+    <div class="loader-box">
+      <div class="spinner"></div>
+      <strong id="loaderText">Guardando...</strong>
+    </div>
+  </div>
+
+  <div id="toast" class="toast hidden"></div>
+
+  <script src="app.js?v=2"></script>
+</body>
+</html>
