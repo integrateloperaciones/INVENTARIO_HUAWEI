@@ -5,7 +5,8 @@ const API_URL = "https://script.google.com/macros/s/AKfycbymcR7JDpA9q_h2Lhao3i11
 const OPCIONES_NUEVO_ESTADO = [
   "",
   "INOPERATIVO, NO SE PUEDE USAR",
-  "UTILIZADO, EN DONDE?"
+  "UTILIZADO, EN DONDE?",
+  "OPERATIVO, STOCK"
 ];
 
 const OPCIONES_REPUESTO = ["", "SI", "NO"];
